@@ -27,21 +27,30 @@ and update start as, start++.
 -  again repeat the process until
 -  sum become equal to the the required sum
 
-def subArraySum(arr, n, s):
-    pnt1 = 0
-    pnt2 = 0
-    
-    sum = arr[0]
-    if(sum == s):
-        return [1,1]
-    
-    while(pnt2 < n-1):
-        if(sum + arr[pnt2+1] <= s):
-            sum += arr[pnt2+1]
-            pnt2+=1
-        else:
-            sum -= arr[pnt1]
-            pnt1+=1
-        if sum == s:
-            return [pnt1+1, pnt2+1]
-    return [-1]
+
+        def subArraySum(arr, n, s)
+            pnt1 = 0
+            pnt2 = 0
+            sum = arr[0]
+            if(sum == s):
+                return [1,1]
+
+            while(pnt2 < n-1):
+                if(sum + arr[pnt2+1] <= s):
+                    sum += arr[pnt2+1]
+                    pnt2+=1
+                else:
+                    sum -= arr[pnt1]
+                    pnt1+=1
+                if sum == s:
+                    return [pnt1+1, pnt2+1]
+            return [-1]
+- Test Case
+
+            arr = [1,2,3,7,5] 
+            n = 5 
+            sum = 12
+
+            num = subArraySum(arr, n, sum) 
+            for i in num:
+                print(i)
