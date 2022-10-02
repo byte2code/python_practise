@@ -1,4 +1,4 @@
-#Solution
+# Solution
 
 - Time Complexity: O(N)
 - Auxiliary Space: O(1). Since no extra space has been taken. 
