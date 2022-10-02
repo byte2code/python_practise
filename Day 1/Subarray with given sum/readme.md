@@ -16,3 +16,32 @@
 - If the currentSum is greater than the given sum, update the variable currentSum as currentSum = currentSum - arr[start],
 and update start as, start++.
 - If the currentSum is equal to given sum, print the subarray and break the loop.
+
+
+#### One more solution using setting up points
+-  p
+- [1 2 3 7 5]
+-  p
+-  Increase the pointer 2 until sum is not greater than required sum
+-  If sum goes beyong required sum then decrease the previous (means pointer 1) by 1
+-  again repeat the process until
+-  sum become equal to the the required sum
+
+def subArraySum(arr, n, s):
+    pnt1 = 0
+    pnt2 = 0
+    
+    sum = arr[0]
+    if(sum == s):
+        return [1,1]
+    
+    while(pnt2 < n-1):
+        if(sum + arr[pnt2+1] <= s):
+            sum += arr[pnt2+1]
+            pnt2+=1
+        else:
+            sum -= arr[pnt1]
+            pnt1+=1
+        if sum == s:
+            return [pnt1+1, pnt2+1]
+    return [-1]
